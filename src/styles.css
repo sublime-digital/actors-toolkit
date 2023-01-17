@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+.navbar {
+  background-color: navy!important;
+}
+
+.copyright {
+  font-size: 10px!important;
+  text-align: right!important;
+}
+
+/*** Color Changing Background Gradient ***/
+
+html, body {
+  width: 100%;
+  height:100%;
+}
+
+body {
+    background: linear-gradient(-125deg, #5595FB, #7F9BC7, #A0C2FA, #E1E8F6);
+    background-size: 400% 400%;
+    animation: gradient 55s ease infinite;
+    padding-top:80px;
+    padding-bottom:300px;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/*** Color Changing Background Gradient ***/
