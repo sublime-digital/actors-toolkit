@@ -1,9 +1,9 @@
 <div class="container">
-
+  <h3 class="text">Rate yourself on the following traits</h3>&nbsp;
   <button class="btn btn-primary btn1" (click)="goodmood=true">Good Traits</button>
-  <!--<button class="btn btn-info" (click)="goodmood=false">Bad Traits</button>-->
+  <button class="btn btn-info" (click)="goodmood=false">Bad Traits</button>
 
-  <!--<div class="goodmoods" *ngIf="goodmood else badmood">-->
+  <div class="goodmoods" *ngIf="goodmood else badmood">
     <div class="row goodmoods">
       <div class="col-md-2">
         <p><label for="customRange1" class="form-label">Smart</label>
@@ -127,9 +127,9 @@
         <button class="btn btn-primary">Submit</button>
       </div>
     </div>
-  <!--</div>-->
+  </div>
 
-  <!--<ng-template #badmood>
+  <ng-template #badmood>
     <div class="row badmoods">
       <div class="col-md-2">
         <p><label for="customRange1" class="form-label">Childish</label>
@@ -253,7 +253,7 @@
         <button class="btn btn-primary">Submit</button>
       </div>
     </div>
-  </ng-template>-->
+  </ng-template>
 
 
 

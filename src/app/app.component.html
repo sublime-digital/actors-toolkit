@@ -1,1 +1,43 @@
-<router-outlet></router-outlet>
+
+
+
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="home">
+        <img src="./assets/ephem-logo.jpg" width="300px" id="kari" >
+    </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="struggles">Traits</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="moodrecord">Moods</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="affirmations">Words</a>
+          </li>
+          <li class="nav settings-icon">
+            <a class="nav-link" routerLink="settings">
+              <span class="material-symbols-outlined">
+                Settings
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <router-outlet></router-outlet>
+  
+  
+  
+  <nav class="navbar fixed-bottom navbar-dark bg-light text-right">
+    <div class="container">
+      <div class="navbar-brand copyright">Copyright © 2023 Ephemetrics Dashboard</div>
+      </div>
+  </nav>
