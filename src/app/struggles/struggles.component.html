@@ -1,9 +1,9 @@
 <div class="container">
-  <h3 class="text">Rate yourself on the following traits</h3>&nbsp;
-  <button class="btn btn-primary btn1" (click)="goodmood=true">Good Traits</button>
-  <button class="btn btn-info" (click)="goodmood=false">Bad Traits</button>
+  <h3 class="text">Rate yourself on these bad AND good traits</h3>&nbsp;
+  <button class="btn btn-primary btn1" (click)="goodmoods=true">Good Traits</button>
+  <button class="btn btn-info" (click)="goodmoods=false">Bad Traits</button>
 
-  <div class="goodmoods" *ngIf="goodmood else badmood">
+  <div class="goodmoods" *ngIf="goodmoods else badmoods">
     <div class="row goodmoods">
       <div class="col-md-2">
         <p><label for="customRange1" class="form-label">Smart</label>
@@ -129,12 +129,12 @@
     </div>
   </div>
 
-  <ng-template #badmood>
+  <ng-template #badmoods>
     <div class="row badmoods">
       <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Childish</label>
+        <p><label for="customRange1" class="form-label">Pessimistic</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Dependent</label>
+        <p><label for="customRange1" class="form-label">Greedy</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Broke</label>
         <br><input type="range" class="form-range" id="customRange1">
@@ -144,7 +144,7 @@
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Lazy</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Stupid</label>
+        <p><label for="customRange1" class="form-label">Selfish</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Petty</label>
         <br><input type="range" class="form-range" id="customRange1">
@@ -172,7 +172,7 @@
         <br><input type="range" class="form-range" id="customRange1">
       </div>
       <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Soft-spoken</label>
+        <p><label for="customRange1" class="form-label">Pissy</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Annoying voice</label>
         <br><input type="range" class="form-range" id="customRange1">
@@ -182,13 +182,13 @@
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Boring</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Crazy</label>
+        <p><label for="customRange1" class="form-label">Moody</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Basic</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Psycho</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Manic</label>
+        <p><label for="customRange1" class="form-label">Broken</label>
         <br><input type="range" class="form-range" id="customRange1">
       </div>
       <div class="col-md-2">
@@ -196,7 +196,7 @@
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Paranoid</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Weak</label>
+        <p><label for="customRange1" class="form-label">Panicky</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Complainer</label>
         <br><input type="range" class="form-range" id="customRange1">
@@ -204,15 +204,15 @@
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Needy</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Distant</label>
+        <p><label for="customRange1" class="form-label">Uncomfortable</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Clueless</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Negative-nancy</label>
+        <p><label for="customRange1" class="form-label">Idiot</label>
         <br><input type="range" class="form-range" id="customRange1">
       </div>
       <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Too serious</label>
+        <p><label for="customRange1" class="form-label">Careless</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Talks too much</label>
         <br><input type="range" class="form-range" id="customRange1">
@@ -220,27 +220,27 @@
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Never laughs</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Unfashionable</label>
+        <p><label for="customRange1" class="form-label">Liar</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Poor speaker</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Antisocial</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Troublemaker</label>
+        <p><label for="customRange1" class="form-label">Unpleasant</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Rude</label>
+        <p><label for="customRange1" class="form-label">Complainer</label>
         <br><input type="range" class="form-range" id="customRange1">
       </div>
       <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Mean</label>
+        <p><label for="customRange1" class="form-label">Bulllying</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Aloof</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Fake</label>
+        <p><label for="customRange1" class="form-label">Provocative</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Combative</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Quiet</label>
+        <p><label for="customRange1" class="form-label">Excuse Maker</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Nervous</label>
         <br><input type="range" class="form-range" id="customRange1">
@@ -248,7 +248,7 @@
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Toxic</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Silent</label>
+        <p><label for="customRange1" class="form-label">Impatient</label>
         <br><input type="range" class="form-range" id="customRange1">
         <button class="btn btn-primary">Submit</button>
       </div>

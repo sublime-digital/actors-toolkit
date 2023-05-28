@@ -12,6 +12,6 @@ export class StrugglesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goodmood = true;
+  goodmoods = false;
 
 }

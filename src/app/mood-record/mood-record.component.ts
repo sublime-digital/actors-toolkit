@@ -12,6 +12,6 @@ export class MoodRecordComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goodmood = true;
+  goodmood = false;
 
 }
