@@ -15,11 +15,12 @@ html, body {
 }
 
 body {
-    background: linear-gradient(-125deg, #5595FB, #7F9BC7, #A0C2FA, #E1E8F6);
+    background: linear-gradient(-125deg, #171F30, #171F30, #39F7F7, #171F30);
     background-size: 400% 400%;
-    animation: gradient 55s ease infinite;
+    animation: gradient 100s ease infinite;
     padding-top:80px;
     padding-bottom:300px;
+    color: #BEFFFF;
 }
 
 @keyframes gradient {
