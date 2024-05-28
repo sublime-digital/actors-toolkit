@@ -1,39 +1,41 @@
 <div class="container">
-  <h3 class="text">Rate yourself on these bad AND good traits</h3>&nbsp;
-  <button class="btn btn-primary btn1" (click)="goodmoods=true">Good Traits</button>
-  <button class="btn btn-info" (click)="goodmoods=false">Bad Traits</button>
+  <h3 class="text">Rate yourself on:</h3>&nbsp;
+  <button class="btn btn-primary btn1" (click)="goodmoods=true">Character Strengths</button>
+  <button class="btn btn-info" (click)="goodmoods=false">Character Flaws</button>
 
   <div class="goodmoods" *ngIf="goodmoods else badmoods">
     <div class="row goodmoods">
       <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Smart</label>
+        <p><label for="customRange1" class="form-label">Optimistic</label>
+        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
+        <p><label for="customRange1" class="form-label">Fair</label>
+        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
+        <p><label for="customRange1" class="form-label">Giving</label>
+        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
+        <p><label for="customRange1" class="form-label">Energetic</label>
+        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
+        <p><label for="customRange1" class="form-label">Likeable</label>
+        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
+        <p><label for="customRange1" class="form-label">Cheerful</label>
+        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
+      </div>
+      
+      <div class="col-md-2">
+        <p><label for="customRange1" class="form-label">Easy to Love</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Successful</label>
+        <p><label for="customRange1" class="form-label">Flexible</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Wealthy</label>
+        <p><label for="customRange1" class="form-label">Understanding</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Accomplished</label>
+        <p><label for="customRange1" class="form-label">Expressive</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Charming</label>
+        <p><label for="customRange1" class="form-label">Interesting</label>
         <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Funny</label>
+        <p><label for="customRange1" class="form-label">Passionate</label>
         <br><input type="range" class="form-range" id="customRange1">
       </div>
       <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Good Speaker</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Nice Hair</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Sociable</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Extroverted</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Trustworthy</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Hard-working</label>
-        <br><input type="range" class="form-range" id="customRange1">
-      </div>
-      <div class="col-md-2">
+        <!--
         <p><label for="customRange1" class="form-label">Rich</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Interesting</label>
@@ -45,9 +47,9 @@
         <p><label for="customRange1" class="form-label">Fashionable</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Talented</label>
-        <br><input type="range" class="form-range" id="customRange1">
+        <br><input type="range" class="form-range" id="customRange1">-->
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2"><!--
         <p><label for="customRange1" class="form-label">Eloquent</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Great storyteller</label>
@@ -59,9 +61,9 @@
         <p><label for="customRange1" class="form-label">Opinionated</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Easy to get along with</label>
-        <br><input type="range" class="form-range" id="customRange1">
+        <br><input type="range" class="form-range" id="customRange1">-->
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2"><!--
         <p><label for="customRange1" class="form-label">Good cook</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Great dancer</label>
@@ -73,9 +75,9 @@
         <p><label for="customRange1" class="form-label">Sexy</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Beautiful</label>
-        <br><input type="range" class="form-range" id="customRange1">
+        <br><input type="range" class="form-range" id="customRange1">-->
       </div>
-      <div class="col-md-2">
+      <div class="col-md-2"><!--
         <p><label for="customRange1" class="form-label">Leader</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Protective</label>
@@ -87,13 +89,17 @@
         <p><label for="customRange1" class="form-label">Understanding</label>
         <br><input type="range" class="form-range" id="customRange1">
         <p><label for="customRange1" class="form-label">Empathetic</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <button class="btn btn-primary">Submit</button>
+        <br><input type="range" class="form-range" id="customRange1">-->
+        <button class="btn btn-primary" (click)="playSound()">Submit</button>
       </div>
     </div>
   </div>
 
-  <ng-template #badmoods>
+
+  <ng-template #badmoods>  
+    <h4>Advanced features are available for Pro members only</h4>
+
+    <!--
     <div class="row badmoods">
       <div class="col-md-2">
         <p><label for="customRange1" class="form-label">Pessimistic</label>
@@ -155,10 +161,12 @@
         <p><label for="customRange1" class="form-label">Combative</label>
         <br><input type="range" class="form-range" id="customRange1">
 
-        <button class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" (click)="playSound()">Submit</button>
       </div>
-    </div>
+    </div>-->
   </ng-template>
+
+
 
 
 

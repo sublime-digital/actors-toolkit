@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { MoodRecordComponent } from './mood-record/mood-record.component';
-import { StrugglesComponent } from './struggles/struggles.component';
+import { TraitsComponent } from './traits/traits.component';
 import { AffirmationsComponent } from './affirmations/affirmations.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoodRecordComponent,
-    StrugglesComponent,
+    TraitsComponent,
     AffirmationsComponent,
   ],
   imports: [

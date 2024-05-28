@@ -14,4 +14,13 @@ export class MoodRecordComponent implements OnInit {
 
   goodmood = false;
 
+  logMood(): void {
+    
+  }
+
+  sound = new Audio("../assets/sound.mp3");
+  playSound() {
+    this.sound.play();
+  }
+
 }
