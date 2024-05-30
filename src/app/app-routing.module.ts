@@ -8,7 +8,7 @@ import { AffirmationsComponent } from './affirmations/affirmations.component';
 const routes: Routes = [
   { path: '',   redirectTo: 'moodrecord', pathMatch: 'full' },
   { path: 'moodrecord', component: MoodRecordComponent },
-  { path: 'struggles', component: TraitsComponent },
+  { path: 'traits', component: TraitsComponent },
   { path: 'affirmations', component: AffirmationsComponent },
 ];
 

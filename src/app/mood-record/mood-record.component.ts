@@ -9,6 +9,7 @@ export class MoodRecordComponent implements OnInit {
 
   constructor() { }
 
+
   ngOnInit(): void {
   }
 
@@ -18,9 +19,11 @@ export class MoodRecordComponent implements OnInit {
     
   }
 
-  sound = new Audio("../assets/sound.mp3");
+  sound = new Audio("../../assets/bell.wav");
   playSound() {
     this.sound.play();
+    console.log("sound played");
   }
+
 
 }

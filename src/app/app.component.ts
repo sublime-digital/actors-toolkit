@@ -7,9 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'happy-app';
-  sound = new Audio("../assets/sound.mp3");
-  playSound() {
-    this.sound.play();
-  }
 
 }

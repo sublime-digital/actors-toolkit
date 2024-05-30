@@ -14,9 +14,10 @@ export class TraitsComponent implements OnInit {
 
   goodmoods = false;
   
-  sound = new Audio("../assets/sound.mp3");
+  sound = new Audio("../../assets/bell.wav");
   playSound() {
     this.sound.play();
+    console.log("sound played");
   }
 
 }
