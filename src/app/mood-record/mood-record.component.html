@@ -1,7 +1,7 @@
 <div class="container">
   <h3 class="text">Rate your:</h3>&nbsp;
-  <button class="btn btn-primary btn1" (click)="goodmood=true">Happy Feelings :)</button>
-  <button class="btn btn-info" (click)="goodmood=false">Sad Feelings :(</button>
+  <button class="btn btn-primary btn1" (click)="goodmood=true">Happy Feelings</button>
+  <button class="btn btn-info" (click)="goodmood=false">Sad Feelings</button>
 
   <div class="goodmoods" *ngIf="goodmood else badmood">
     <div class="row goodmoods">

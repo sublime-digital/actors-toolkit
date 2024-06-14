@@ -1,19 +1,20 @@
-<div class="container">
+<div class="contiainer">
     <div class="row">
-        <div class="col-md-4">
-            <h3>Here are your daily positive affirmations:</h3>
-
-        </div>
-        <div class="col-md-4">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <div class="form-group promptpicker">
+            <p>
+              <p>
+            <label for="power"><h3>Today's Positive Affirmation</h3></label>
             <p></p>
-            <h4>today will be an awesome day</h4>
-            <h4>i am hopeful for all my tomorrows</h4>
-            <h4>i am letting go of the painful memories</h4>
-        </div>
-        <div class="col-md-4">
-            <p></p>
-            <h4>i am leading my life from a place of love</h4>
-            <h4>i deserve the good things only if i work hard for them</h4>
-        </div>
+            <button class="btn btn-primary" (click)="getNew()">Daily Affirmation</button>
+          </div>
+          <p></p>
+        <h1>{{affirmation}}
+        </h1>
+      </div>
+    <div class="col-md-4">
     </div>
-</div>
+  </div>
+
