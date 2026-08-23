@@ -68,10 +68,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "happy-app:build:production"
+              "buildTarget": "happy-app:build:production"
             },
             "development": {
-              "browserTarget": "happy-app:build:development"
+              "buildTarget": "happy-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -79,7 +79,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "happy-app:build"
+            "buildTarget": "happy-app:build"
           }
         },
         "test": {

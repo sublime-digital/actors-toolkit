@@ -16,3 +16,31 @@
 .text {
   display: inline;
 }
+
+
+card {
+  margin: 10;
+  min-height: 400px;
+  max-height: auto;
+  display: block;
+}
+
+.image-frame { width: 100%; height: auto; border: 4px solid white; overflow: hidden; }
+    img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.5s; }
+    .fade-in { animation: fadeIn 1s; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.card {
+  border: 10px solid rgb(222, 246, 255);
+  opacity: 1;
+  color: #55787c;
+  background-color: rgb(234, 224, 236)!important;
+}
+
+.advert {
+  color: #ebfeff;
+  text-align: center;
+  max-width: 210px;
+  max-height: auto;
+  background-color: rgb(43, 10, 6)!important;
+}

@@ -1,4 +1,10 @@
 <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+
+      <div class="col-md-8">
+
   <h3 class="text">Rate yourself on:</h3>&nbsp;
   <button class="btn btn-primary btn1" (click)="goodmoods=true">Character Strengths</button>
   <button class="btn btn-info" (click)="goodmoods=false">Character Flaws</button>
@@ -19,7 +25,7 @@
         <p><label for="customRange1" class="form-label">Cheerful</label>
         <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
       </div>
-      
+
       <div class="col-md-2">
         <p><label for="customRange1" class="form-label">Easy to Love</label>
         <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
@@ -96,7 +102,7 @@
   </div>
 
 
-  <ng-template #badmoods>  
+  <ng-template #badmoods>
     <h4>Advanced features are available for Pro members only</h4>
 
     <!--
@@ -171,3 +177,19 @@
 
 
 </div>
+      <div class="col-md-3">
+          <div class="card advert">
+            <div class="card-header">
+              <h6 class="h6">Advertisement</h6>
+            </div>
+            <div>
+              <a [href]="currentLink()">
+                <div class="image-frame">
+                  <img [src]="currentImage()" alt="Adverts" class="fade-in">
+                </div>
+              </a>
+          </div>
+          </div>
+      </div>
+    </div>
+    </div>

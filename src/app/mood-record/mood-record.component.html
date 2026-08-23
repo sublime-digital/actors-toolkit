@@ -1,5 +1,11 @@
 <div class="container">
-  <h3 class="text">Rate your:</h3>&nbsp;
+    <div class="row">
+      <div class="col-md-1">
+      </div>
+
+      <div class="col-md-8">
+
+          <h3 class="text">Rate your:</h3>&nbsp;
   <button class="btn btn-primary btn1" (click)="goodmood=true">Happy Feelings</button>
   <button class="btn btn-info" (click)="goodmood=false">Sad Feelings</button>
 
@@ -162,5 +168,21 @@
   </ng-template>
 
 
+      </div>
+
+            <div class="col-md-3">
+                        <div class="card advert">
+            <div class="card-header">
+              <h6 class="h6">Advertisement</h6>
+            </div>
+            <div>
+              <a [href]="currentLink()">
+                <div class="image-frame">
+                  <img [src]="currentImage()" alt="Adverts" class="fade-in">
+                </div>
+              </a>
+          </div>
+          </div>
+      </div>
 
 </div>

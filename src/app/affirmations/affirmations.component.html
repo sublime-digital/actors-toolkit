@@ -1,8 +1,8 @@
 <div class="contiainer">
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-1">
       </div>
-      <div class="col-md-4">
+      <div class="col-md-8">
         <div class="form-group promptpicker">
             <p>
               <p>
@@ -14,7 +14,19 @@
         <h1>{{affirmation}}
         </h1>
       </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
+          <div class="card advert">
+            <div class="card-header">
+              <h6 class="h6">Advertisement</h6>
+            </div>
+            <div>
+              <a [href]="currentLink()">
+                <div class="image-frame">
+                  <img [src]="currentImage()" alt="Adverts" class="fade-in">
+                </div>
+              </a>
+          </div>
+          </div>
     </div>
   </div>
 
