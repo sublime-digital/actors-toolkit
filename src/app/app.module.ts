@@ -7,17 +7,19 @@ import { AppComponent } from './app.component';
 import { MoodRecordComponent } from './mood-record/mood-record.component';
 import { TraitsComponent } from './traits/traits.component';
 import { AffirmationsComponent } from './affirmations/affirmations.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     MoodRecordComponent,
     TraitsComponent,
-    AffirmationsComponent,
   ],
   imports: [
+    AffirmationsComponent,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

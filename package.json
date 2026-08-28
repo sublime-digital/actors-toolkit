@@ -6,7 +6,12 @@
     "start": "ng serve",
     "build": "export NODE_OPTIONS=--openssl-legacy-provider; ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "vitest",
+    "test:run": "vitest run",
+    "e2e": "ng e2e",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:component": "cypress run --component"
   },
   "private": true,
   "dependencies": {
@@ -19,22 +24,20 @@
     "@angular/platform-browser-dynamic": "^17.3.12",
     "@angular/router": "^17.3.12",
     "rxjs": "~6.6.0",
-    "tslib": "^2.5.0",
-    "zone.js": "^0.14.10"
+    "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@analogjs/vitest-angular": "^2.7.0",
+    "@analogjs/vitest-angular": "~1.12.0",
     "@angular-devkit/build-angular": "^17.3.17",
     "@angular/cli": "^17.3.17",
     "@angular/compiler-cli": "^17.3.12",
-    "@types/jasmine": "~3.8.0",
+    "@cypress/schematic": "^3.0.0",
     "@types/node": "^20.19.43",
-    "jasmine-core": "~3.8.0",
-    "karma": "^6.3.20",
-    "karma-chrome-launcher": "^3.1.1",
-    "karma-coverage": "~2.0.3",
-    "karma-jasmine": "^4.0.2",
-    "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~5.4.5"
+    "cypress": "latest",
+    "jsdom": "^30.0.1",
+    "typescript": "~5.4.5",
+    "vite": "^8.2.2",
+    "vitest": "^4.1.11",
+    "zone.js": "0.14.10"
   }
 }

@@ -1,14 +1,90 @@
-import { Component, signal, computed, OnInit } from '@angular/core';
+import { Component, OnInit, inject, signal, computed, DestroyRef } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { interval } from 'rxjs';
+import { ImdbService, Movie } from '../_services/imdb-service.service';
 
 @Component({
   selector: 'app-affirmations',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './affirmations.component.html',
   styleUrls: ['./affirmations.component.css']
 })
+
 export class AffirmationsComponent implements OnInit {
 
+  constructor() { }
 
-  private images = [
+  ngOnInit(): void {
+    // this.startSwitching();
+
+    // 1. Load the 8 new releases
+    this.imdbService.getNewReleasesWithReviews().subscribe((data) => {
+      this.movies.set(data);
+      if (data.length > 0) {
+        this.startCarousel();
+      }
+    });
+  }
+
+  private imdbService = inject(ImdbService);
+  private destroyRef = inject(DestroyRef);
+
+  movies = signal<Movie[]>([]);
+  currentIndex = signal<number>(0);
+
+  // Computed signals bound to your HTML signals
+  currentMovie = computed(() => this.movies()[this.currentIndex()]);
+
+  currentImage = computed(() => {
+    const movie = this.currentMovie();
+    // Return movie poster or fallback placeholder image
+    return movie?.posterUrl || '../../assets/adverts/advert004.png';
+  });
+
+  currentLink = computed(() => {
+    const movie = this.currentMovie();
+    return movie ? `/movies/${movie.id}` : '#';
+  });
+
+  currentTitle = computed(() => this.currentMovie()?.title ?? 'Featured Releases');
+
+  private startCarousel(): void {
+    // 2. Cycle index every 5 seconds (auto-unsubscribes on component destroy)
+    interval(5000)
+      .pipe(takeUntilDestroyed(this.destroyRef))
+      .subscribe(() => {
+        if (this.movies().length > 0) {
+          this.currentIndex.update((idx) => (idx + 1) % this.movies().length);
+        }
+      });
+  }
+
+  //Start affirmations code
+  affirmation = ""
+
+  allaffirmation = [
+    "Today will be an awesome day",
+    "I am hopeful for all my tomorrows",
+    "I am letting go of the painful memories",
+    "I am leading my life from a place of love",
+    "I deserve the good things only if i work hard for them"
+  ]
+
+  getNew() {
+    this.affirmation = this.allaffirmation[Math.floor(Math.random()*this.allaffirmation.length)];
+  }
+
+  submitted = false;
+
+  onSubmit() { this.submitted = true; }
+
+    // Start Advertisement Code
+
+    /*
+
+      private images = [
       '../../assets/adverts/advert001.png',
       '../../assets/adverts/advert002.png',
       '../../assets/adverts/advert003.png',
@@ -23,17 +99,12 @@ export class AffirmationsComponent implements OnInit {
       "/",
     ];
 
-        // 2. State management with signals
     private currentIndex = signal(0);
     private timerId: any;
 
     // 3. Computed signal for the template
     readonly currentImage = computed(() => this.images[this.currentIndex()]);
     readonly currentLink = computed(() => this.links[this.currentIndex()]);
-
-    ngOnInit() {
-      this.startSwitching();
-    }
 
     ngOnDestroy(): void {
             if (this.timerId) clearInterval(this.timerId);
@@ -43,26 +114,7 @@ export class AffirmationsComponent implements OnInit {
       this.timerId = setInterval(() => {
         this.currentIndex.update(idx => (idx + 1) % this.images.length);
       }, 5000); // 5000ms = 5 seconds
-    }
-
-  constructor() { }
-
-  affirmation = ""
-
-  allaffirmation = [
-    "today will be an awesome day",
-    "i am hopeful for all my tomorrows",
-    "i am letting go of the painful memories",
-    "i am leading my life from a place of love",
-    "i deserve the good things only if i work hard for them"
-  ]
-
-  getNew() {
-    this.affirmation = this.allaffirmation[Math.floor(Math.random()*this.allaffirmation.length)];
-  }
-
-submitted = false;
-
-onSubmit() { this.submitted = true; }
+    } */
 }
+
 
