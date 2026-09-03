@@ -9,9 +9,14 @@ import { TraitsComponent } from './traits/traits.component';
 import { AffirmationsComponent } from './affirmations/affirmations.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewMoviesComponent } from './new-movies/new-movies.component';
+import { VocalTrainingComponent } from './vocal-training/vocal-training.component';
+import { GigsComponent } from './gigs/gigs.component';
 
 @NgModule({
   declarations: [
+  
+    VocalTrainingComponent,
+       GigsComponent
   ],
   imports: [
     AppComponent,

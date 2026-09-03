@@ -4,6 +4,8 @@ import { MoodRecordComponent } from './mood-record/mood-record.component';
 import { TraitsComponent } from './traits/traits.component';
 import { AffirmationsComponent } from './affirmations/affirmations.component';
 import { NewMoviesComponent } from './new-movies/new-movies.component';
+import { VocalTrainingComponent } from './vocal-training/vocal-training.component';
+import { GigsComponent } from './gigs/gigs.component';
 
 
 export const routes: Routes = [
@@ -11,6 +13,8 @@ export const routes: Routes = [
   { path: 'new-movies', component: NewMoviesComponent },
   { path: 'moodrecord', component: MoodRecordComponent },
   { path: 'traits', component: TraitsComponent },
+  { path: 'vocal-training', component: VocalTrainingComponent },
+  { path: 'gigs', component: GigsComponent },
   { path: 'affirmations', component: AffirmationsComponent },
 ];
 
