@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  omdbApiKey: '74efadf3', // Hardcode string here (this file is ignored by git)
-  /*firebase: {
+  omdbApiKey: 'PLACEHOLDER_KEY', // Declare property here so TS recognizes environment.omdbApiKey
+};  /*firebase: {
     apiKey: "YOUR_FIREBASE_API_KEY",
     authDomain: "your-app.firebaseapp.com",
     projectId: "your-app-id",
@@ -14,7 +14,6 @@ export const environment = {
     appId: "1:123456789:web:abcdef"
   }
   }*/
-};
 
 /*
  * For easier debugging in development mode, you can import the following file
