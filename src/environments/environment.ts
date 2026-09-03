@@ -3,7 +3,17 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  omdbApiKey: '74efadf3', // Hardcode string here (this file is ignored by git)
+  /*firebase: {
+    apiKey: "YOUR_FIREBASE_API_KEY",
+    authDomain: "your-app.firebaseapp.com",
+    projectId: "your-app-id",
+    storageBucket: "your-app.appspot.com",
+    messagingSenderId: "123456789",
+    appId: "1:123456789:web:abcdef"
+  }
+  }*/
 };
 
 /*

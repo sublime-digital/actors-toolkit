@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, forkJoin, of } from 'rxjs';
 import { map, switchMap } from 'rxjs/operators';
 import { Movie, MovieReview } from '../_models/movie.model';
+import { environment } from '../../environments/environment';
 
 export interface OmdbRating {
   Source: string;
@@ -35,7 +36,7 @@ export interface OmdbMovieDetails {
 })
 export class OmdbService {
   private http = inject(HttpClient);
-  private apiKey = 'OMDB_API_KEY';
+  private apiKey = environment.omdbApiKey;
   private apiUrl = 'https://www.omdbapi.com/';
 
   getNewReleasesWithReviews(query: string = '2024'): Observable<OmdbMovieDetails[]> {
