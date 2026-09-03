@@ -1,0 +1,127 @@
+.movies-container {
+  padding: 1.5rem;
+}
+
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+/* Grid Layout */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.75rem;
+  margin-top: 1rem;
+}
+
+/* Rounded Card Base & Entrance Animation */
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: 16px !important; /* Smooth rounded corners */
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+              box-shadow 0.3s ease;
+
+  /* Keyframe Animation Trigger */
+  animation: bounceIn 0.65s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+}
+
+/* Hover Lift Effect */
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Poster Image Styling */
+.movie-card img[mat-card-image] {
+  height: 380px;
+  object-fit: cover;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+/* Card Content & Padding */
+.movie-card mat-card-header {
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.movie-card mat-card-content {
+  flex-grow: 1;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.plot {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 0.75rem;
+}
+
+.details {
+  font-size: 0.85rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+/* Rating Badges */
+.ratings-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  background-color: #f5f5f7;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+}
+
+.ratings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.rating-badge {
+  color: #333;
+}
+
+/* Action Bar */
+.movie-card mat-card-actions {
+  padding: 0.5rem 1rem 1rem 1rem;
+}
+
+/* Bounce-In Keyframes */
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.8, 0.8, 0.8) translateY(30px);
+  }
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03) translateY(-5px);
+  }
+  80% {
+    transform: scale3d(0.97, 0.97, 0.97) translateY(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) translateY(0);
+  }
+}
+
+.no-movies {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #666;
+  font-size: 1.1rem;
+}

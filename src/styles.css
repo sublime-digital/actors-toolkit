@@ -1,3 +1,15 @@
+/* Import prebuilt Angular Material theme */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+/* Core resets for layout */
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
 .navbar {
   background-color: #171F30!important;
 }
@@ -21,6 +33,13 @@ body {
     padding-top:80px;
     padding-bottom:300px;
     color: #BEFFFF;
+}
+
+.movie-card mat-card-title,
+.movie-card .mat-mdc-card-title {
+  color: #000000 !important;
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 @keyframes gradient {

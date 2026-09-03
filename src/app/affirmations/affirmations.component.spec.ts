@@ -3,7 +3,7 @@ import { of } from 'rxjs';
 import { describe, beforeEach, afterEach, it, expect, vi } from 'vitest';
 
 import { AffirmationsComponent } from './affirmations.component';
-import { ImdbService, Movie } from '../_services/imdb-service.service';
+import { OmdbService, OmdbMovieDetails } from '../_services/omdb.service';
 
 describe('AffirmationsComponent', () => {
   let component: AffirmationsComponent;

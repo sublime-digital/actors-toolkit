@@ -1,7 +1,10 @@
 import { Component, computed, signal, OnInit } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-traits',
+  standalone: true,
+  imports: [NgIf],
   templateUrl: './traits.component.html',
   styleUrls: ['./traits.component.css']
 })

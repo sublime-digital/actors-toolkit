@@ -1,0 +1,35 @@
+<div class="movies-container">
+  <h2>New Releases</h2>
+
+  @if (isLoading()) {
+    <div class="spinner-container">
+      <mat-spinner diameter="50"></mat-spinner>
+    </div>
+  } @else {
+  <div class="movies-grid">
+    @for (movie of movies(); track movie.imdbID; let i = $index) {
+      @if (isImageValid(movie)) {
+        <mat-card class="movie-card" [style.animation-delay]="i * 80 + 'ms'">
+          <img
+            mat-card-image
+            [src]="movie.Poster"
+            [alt]="movie.Title"
+            (error)="onImageError(movie.imdbID)"
+          />
+          <mat-card-header>
+            <mat-card-title>{{ movie.Title }}</mat-card-title>
+            <mat-card-subtitle>{{ movie.Year }} • {{ movie.Genre }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <p class="plot">{{ movie.Plot }}</p>
+            <div class="details">
+              <p><strong>Director:</strong> {{ movie.Director }}</p>
+              <p><strong>Cast:</strong> {{ movie.Actors }}</p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      }
+    }
+  </div>
+  }
+</div>

@@ -2,7 +2,8 @@ import { Component, OnInit, inject, signal, computed, DestroyRef } from '@angula
 import { CommonModule } from '@angular/common';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { interval } from 'rxjs';
-import { ImdbService, Movie } from '../_services/imdb-service.service';
+import { OmdbService, OmdbMovieDetails } from '../_services/omdb.service';
+import { Movie } from '../_models/movie.model';
 
 @Component({
   selector: 'app-affirmations',
@@ -20,15 +21,16 @@ export class AffirmationsComponent implements OnInit {
     // this.startSwitching();
 
     // 1. Load the 8 new releases
-    this.imdbService.getNewReleasesWithReviews().subscribe((data) => {
-      this.movies.set(data);
-      if (data.length > 0) {
-        this.startCarousel();
-      }
-    });
+      this.omdbService.getNewReleasesWithReviews('2024').subscribe({
+        next: (movies: OmdbMovieDetails[]) => {
+          console.log('Movies with reviews:', movies);
+          // movies[0].Ratings will contain Rotten Tomatoes / Metacritic / IMDb reviews
+        },
+        error: (err) => console.error(err)
+      });
   }
 
-  private imdbService = inject(ImdbService);
+  private omdbService = inject(OmdbService);
   private destroyRef = inject(DestroyRef);
 
   movies = signal<Movie[]>([]);

@@ -1,7 +1,10 @@
 import { Component, computed, signal, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common'; // 1. Import CommonModule
 
 @Component({
   selector: 'app-mood-record',
+  standalone: true,
+  imports: [CommonModule], // 2. Add here
   templateUrl: './mood-record.component.html',
   styleUrls: ['./mood-record.component.css']
 })
