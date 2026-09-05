@@ -1,5 +1,6 @@
-import { Component, computed, signal, OnInit } from '@angular/core';
+import { Component, computed, signal, OnInit, inject } from '@angular/core';
 import { CommonModule } from '@angular/common'; // 1. Import CommonModule
+import { AuthModalService } from '../auth-modal/auth-modal.service.';
 
 @Component({
   selector: 'app-mood-record',
@@ -51,16 +52,34 @@ export class MoodRecordComponent implements OnInit {
 
   constructor() { }
 
-  goodmood = false;
 
-  logMood(): void {
-
-  }
+  goodmoods = false;
 
   sound = new Audio("../../assets/bell.wav");
   playSound() {
     this.sound.play();
     console.log("sound played");
+  }
+
+  isLoggedIn = false; // Replace with your Auth state signal or service
+
+  private authModalService = inject(AuthModalService);
+
+  proTools(): void {
+    if (!this.isLoggedIn) {
+      // Launch auth guard modal if unauthenticated
+      this.authModalService.open('Pro Modal');
+      return;
+    }
+
+    // Unlocked feature execution
+    this.goodmoods = false;
+  }
+
+  showProModal = false;
+
+  closeProModal(): void {
+    this.showProModal = false;
   }
 
 

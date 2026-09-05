@@ -11,15 +11,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { NewMoviesComponent } from './new-movies/new-movies.component';
 import { VocalTrainingComponent } from './vocal-training/vocal-training.component';
 import { GigsComponent } from './gigs/gigs.component';
+import { AuthModalComponent } from './auth-modal/auth-modal.component';
+import { AccountComponent } from './account/account.component';
 
 @NgModule({
   declarations: [
-  
+
     VocalTrainingComponent,
-       GigsComponent
+       GigsComponent,
+       AccountComponent
   ],
   imports: [
-    AppComponent,
+    AuthModalComponent,
     TraitsComponent,
     MoodRecordComponent,
     AffirmationsComponent,
@@ -28,8 +31,7 @@ import { GigsComponent } from './gigs/gigs.component';
     HttpClientModule,
     NewMoviesComponent,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: []
 })
 
 export class AppModule { }

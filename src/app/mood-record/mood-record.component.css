@@ -44,3 +44,107 @@ card {
   max-height: auto;
   background-color: rgb(43, 10, 6)!important;
 }
+
+/* Primary Action Button (Character Strengths) - Cyan Glow Accent */
+.btn-action-primary {
+  background-color: #55cad6;
+  color: #030a13 !important;
+  border: 1px solid #55cad6;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(85, 202, 214, 0.25);
+}
+
+.btn-action-primary:hover {
+  background-color: #6ee2ef;
+  border-color: #6ee2ef;
+  box-shadow: 0 0 18px rgba(85, 202, 214, 0.45);
+  color: #030a13 !important;
+  transform: translateY(-1px);
+}
+
+/* Secondary Action Button (Character Flaws) - Dark Midnight Outline */
+.btn-action-secondary {
+  background: rgba(7, 18, 32, 0.6);
+  color: #ffffff !important;
+  border: 1px solid rgba(141, 164, 184, 0.35);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  backdrop-filter: blur(4px);
+}
+
+.btn-action-secondary:hover {
+  background: rgba(85, 202, 214, 0.12);
+  border-color: #55cad6;
+  color: #55cad6 !important;
+  box-shadow: 0 0 15px rgba(85, 202, 214, 0.25);
+  transform: translateY(-1px);
+}
+
+/* Container transition wrapper */
+.goodmoods-container,
+.pro-notice-container {
+  overflow: hidden;
+  will-change: transform, opacity, max-height;
+}
+
+/* Slide Down (Show) Animation */
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+    max-height: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 1000px;
+  }
+}
+
+.slide-down-animated {
+  animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Pro Notice Styled Container */
+.pro-notice-container {
+  background: rgba(7, 18, 32, 0.6);
+  border: 1px solid rgba(85, 202, 214, 0.2);
+  backdrop-filter: blur(4px);
+}
+
+/* Primary Action Button (Character Strengths) */
+.btn-action-primary {
+  background-color: #55cad6;
+  color: #030a13 !important;
+  border: 1px solid #55cad6;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(85, 202, 214, 0.25);
+}
+
+.btn-action-primary:hover {
+  background-color: #6ee2ef;
+  border-color: #6ee2ef;
+  box-shadow: 0 0 18px rgba(85, 202, 214, 0.45);
+  color: #030a13 !important;
+  transform: translateY(-1px);
+}
+
+/* Secondary Action Button (Character Flaws) */
+.btn-action-secondary {
+  background: rgba(7, 18, 32, 0.6);
+  color: #ffffff !important;
+  border: 1px solid rgba(141, 164, 184, 0.35);
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  backdrop-filter: blur(4px);
+}
+
+.btn-action-secondary:hover {
+  background: rgba(85, 202, 214, 0.12);
+  border-color: #55cad6;
+  color: #55cad6 !important;
+  box-shadow: 0 0 15px rgba(85, 202, 214, 0.25);
+  transform: translateY(-1px);
+}

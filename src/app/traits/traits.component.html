@@ -6,175 +6,77 @@
       <div class="col-md-8">
 
   <h3 class="text">Rate yourself on:</h3>&nbsp;
-  <button class="btn btn-primary btn1" (click)="goodmoods=true">Character Strengths</button>
-  <button class="btn btn-info" (click)="goodmoods=false">Character Flaws</button>
+<div class="d-flex align-items-center gap-3 my-3">
+  <!-- Toggles Strengths section -->
+  <button
+    type="button"
+    class="btn btn-action-primary px-4 py-2 fw-bold"
+    (click)="goodmoods = !goodmoods">
+    Character Strengths
+  </button>
 
-  <div class="goodmoods" *ngIf="goodmoods else badmoods">
+  <!-- Triggers Pro Auth Modal for Flaws -->
+  <button
+    type="button"
+    class="btn btn-action-secondary px-4 py-2 fw-bold"
+    (click)="proTools()">
+    Character Flaws
+  </button>
+</div>
+
+<!-- Strengths Section with Toggle Slide Animation -->
+@if (goodmoods) {
+  <div class="goodmoods-container slide-down-animated">
     <div class="row goodmoods">
       <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Optimistic</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
-        <p><label for="customRange1" class="form-label">Fair</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
-        <p><label for="customRange1" class="form-label">Giving</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
-        <p><label for="customRange1" class="form-label">Energetic</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
-        <p><label for="customRange1" class="form-label">Likeable</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
-        <p><label for="customRange1" class="form-label">Cheerful</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
+        <p><label for="range-opt" class="form-label">Optimistic</label>
+        <br><input type="range" class="form-range" id="range-opt" (mouseup)="playSound()"></p>
+        <p><label for="range-fair" class="form-label">Fair</label>
+        <br><input type="range" class="form-range" id="range-fair" (mouseup)="playSound()"></p>
+        <p><label for="range-giving" class="form-label">Giving</label>
+        <br><input type="range" class="form-range" id="range-giving" (mouseup)="playSound()"></p>
+        <p><label for="range-energy" class="form-label">Energetic</label>
+        <br><input type="range" class="form-range" id="range-energy" (mouseup)="playSound()"></p>
+        <p><label for="range-like" class="form-label">Likeable</label>
+        <br><input type="range" class="form-range" id="range-like" (mouseup)="playSound()"></p>
+        <p><label for="range-cheer" class="form-label">Cheerful</label>
+        <br><input type="range" class="form-range" id="range-cheer" (mouseup)="playSound()"></p>
       </div>
 
       <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Easy to Love</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
-        <p><label for="customRange1" class="form-label">Flexible</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
-        <p><label for="customRange1" class="form-label">Understanding</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
-        <p><label for="customRange1" class="form-label">Expressive</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
-        <p><label for="customRange1" class="form-label">Interesting</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
-        <p><label for="customRange1" class="form-label">Passionate</label>
-        <br><input type="range" class="form-range" id="customRange1" (mouseup)="playSound()">
+        <p><label for="range-love" class="form-label">Easy to Love</label>
+        <br><input type="range" class="form-range" id="range-love" (mouseup)="playSound()"></p>
+        <p><label for="range-flex" class="form-label">Flexible</label>
+        <br><input type="range" class="form-range" id="range-flex" (mouseup)="playSound()"></p>
+        <p><label for="range-understand" class="form-label">Understanding</label>
+        <br><input type="range" class="form-range" id="range-understand" (mouseup)="playSound()"></p>
+        <p><label for="range-express" class="form-label">Expressive</label>
+        <br><input type="range" class="form-range" id="range-express" (mouseup)="playSound()"></p>
+        <p><label for="range-interest" class="form-label">Interesting</label>
+        <br><input type="range" class="form-range" id="range-interest" (mouseup)="playSound()"></p>
+        <p><label for="range-passion" class="form-label">Passionate</label>
+        <br><input type="range" class="form-range" id="range-passion" (mouseup)="playSound()"></p>
       </div>
-      <div class="col-md-2">
-        <!--
-        <p><label for="customRange1" class="form-label">Rich</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Interesting</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Great Physique</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Hard-worker</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Fashionable</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Talented</label>
-        <br><input type="range" class="form-range" id="customRange1">-->
-      </div>
-      <div class="col-md-2"><!--
-        <p><label for="customRange1" class="form-label">Eloquent</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Great storyteller</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Comedian</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Intelligent</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Opinionated</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Easy to get along with</label>
-        <br><input type="range" class="form-range" id="customRange1">-->
-      </div>
-      <div class="col-md-2"><!--
-        <p><label for="customRange1" class="form-label">Good cook</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Great dancer</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Smells good</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Well groomed</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Sexy</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Beautiful</label>
-        <br><input type="range" class="form-range" id="customRange1">-->
-      </div>
-      <div class="col-md-2"><!--
-        <p><label for="customRange1" class="form-label">Leader</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Protective</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Fun</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Kind</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Understanding</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Empathetic</label>
-        <br><input type="range" class="form-range" id="customRange1">-->
-        <button class="btn btn-primary" (click)="playSound()">Submit</button>
+
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+
+      <div class="col-md-2 align-self-end">
+        <button class="btn btn-action-primary py-2 px-4" (click)="playSound()">Submit</button>
       </div>
     </div>
   </div>
+} @else {
+  <!-- Pro Fallback Block -->
+  <div class="pro-notice-container slide-down-animated p-4 rounded-3 text-center my-3">
+    <h4 class="h5 text-info mb-0">Advanced features are available for Pro members only</h4>
+  </div>
+}
 
-
-  <ng-template #badmoods>
-    <h4>Advanced features are available for Pro members only</h4>
-
-    <!--
-    <div class="row badmoods">
-      <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Pessimistic</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Greedy</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Broke</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Depressed</label>
-        <br><input type="range" class="form-range" id="customRange1">
-      </div>
-      <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Shy</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Wierd</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Ugly</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Fat</label>
-        <br><input type="range" class="form-range" id="customRange1">
-      </div>
-      <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Pissy</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Annoying voice</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Pushy</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Aggressive</label>
-        <br><input type="range" class="form-range" id="customRange1">
-      </div>
-      <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Don't work out</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Paranoid</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Panicky</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Complainer</label>
-        <br><input type="range" class="form-range" id="customRange1">
-      </div>
-      <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Careless</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Talks too much</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Never smiles</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Never laughs</label>
-        <br><input type="range" class="form-range" id="customRange1">
-      </div>
-      <div class="col-md-2">
-        <p><label for="customRange1" class="form-label">Bulllying</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Aloof</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Provocative</label>
-        <br><input type="range" class="form-range" id="customRange1">
-        <p><label for="customRange1" class="form-label">Combative</label>
-        <br><input type="range" class="form-range" id="customRange1">
-
-        <button class="btn btn-primary" (click)="playSound()">Submit</button>
-      </div>
-    </div>-->
-  </ng-template>
-
-
-
-
+<div class="header-container svg-container">
+  <img src="assets/teatro2.svg" alt="Icon" class="transparent-svg bounce-in-svg">
+</div>
 
 </div>
       <div class="col-md-3">

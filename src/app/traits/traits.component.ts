@@ -1,10 +1,11 @@
-import { Component, computed, signal, OnInit } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { Component, computed, signal, OnInit, inject } from '@angular/core';
+import { CommonModule, NgIf } from '@angular/common';
+import { AuthModalService } from '../auth-modal/auth-modal.service.';
 
 @Component({
   selector: 'app-traits',
   standalone: true,
-  imports: [NgIf],
+  imports: [CommonModule, NgIf],
   templateUrl: './traits.component.html',
   styleUrls: ['./traits.component.css']
 })
@@ -56,6 +57,28 @@ export class TraitsComponent implements OnInit {
   playSound() {
     this.sound.play();
     console.log("sound played");
+  }
+
+  isLoggedIn = false; // Replace with your Auth state signal or service
+
+  private authModalService = inject(AuthModalService);
+
+
+  proTools(): void {
+    if (!this.isLoggedIn) {
+      // Launch auth guard modal if unauthenticated
+      this.authModalService.open('Pro Modal');
+      return;
+    }
+
+    // Unlocked feature execution
+    this.goodmoods = false;
+  }
+
+  showProModal = false;
+
+  closeProModal(): void {
+    this.showProModal = false;
   }
 
 }

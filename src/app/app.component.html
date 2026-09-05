@@ -26,7 +26,7 @@
           </ul>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/vocal-training" routerLinkActive="active">Vocal Training</a>
+          <a class="nav-link" (click)="proTools()" routerLink="/vocal-training" routerLinkActive="active">Vocal Training</a>
         </li>
 
         <li class="nav-item">
@@ -34,11 +34,11 @@
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" routerLink="/gigs" routerLinkActive="active">Acting Gigs</a>
+          <a class="nav-link" (click)="proTools()" routerLink="/gigs" routerLinkActive="active">Acting Gigs</a>
         </li>
 
         <li class="nav settings-icon">
-          <a class="nav-link" routerLink="/traits" routerLinkActive="active">
+          <a class="nav-link" routerLink="/account" routerLinkActive="active">
             <span class="material-symbols-outlined">Settings</span>
           </a>
         </li>
@@ -49,6 +49,9 @@
 </nav>
 
 <router-outlet></router-outlet>
+
+<!-- Root-level Auth Guard Modal -->
+<app-auth-modal></app-auth-modal>
 
 <nav class="navbar fixed-bottom navbar-dark bg-light text-right">
   <div class="container">

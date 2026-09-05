@@ -6,6 +6,7 @@ import { AffirmationsComponent } from './affirmations/affirmations.component';
 import { NewMoviesComponent } from './new-movies/new-movies.component';
 import { VocalTrainingComponent } from './vocal-training/vocal-training.component';
 import { GigsComponent } from './gigs/gigs.component';
+import { AccountComponent } from './account/account.component';
 
 
 export const routes: Routes = [
@@ -16,6 +17,7 @@ export const routes: Routes = [
   { path: 'vocal-training', component: VocalTrainingComponent },
   { path: 'gigs', component: GigsComponent },
   { path: 'affirmations', component: AffirmationsComponent },
+  { path: 'account', component: AccountComponent },
 ];
 
 @NgModule({

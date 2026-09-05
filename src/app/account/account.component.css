@@ -1,0 +1,68 @@
+.account-avatar {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 16px; /* Soft rounded corners. Use 50% for a full circle */
+  border: 1px solid rgba(85, 202, 214, 0.25); /* Cyan border highlight */
+
+  /* Combined soft dark shadow & cyan glow */
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(85, 202, 214, 0.15);
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Optional hover interaction */
+.account-avatar:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.6),
+    0 0 25px rgba(85, 202, 214, 0.3);
+}
+
+/* Container column setup */
+.account-avatar-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+.profile-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 20px;
+
+  /* Darker, semi-transparent background for strong contrast */
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+
+  /* High contrast white text & icons */
+  color: #ffffff !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+
+  /* Drop shadow to pop out from the bright cyan background */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.2s ease-in-out;
+}
+
+/* Ensure child icons inherit pure white */
+.profile-link-btn i {
+  color: #ffffff;
+  font-size: 1.05rem;
+}
+
+/* Interactive Hover State */
+.profile-link-btn:hover {
+  background: rgba(0, 0, 0, 0.65);
+  border-color: #ffffff;
+  color: #ffffff !important;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+}
+
