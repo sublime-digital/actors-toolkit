@@ -24,38 +24,36 @@
   </button>
 </div>
 
-<!-- Strengths Section with Toggle Slide Animation -->
-@if (goodmoods) {
-  <div class="goodmoods-container slide-down-animated">
+<!--<div class="goodmoods-container slide-down-animated">
     <div class="row goodmoods">
       <div class="col-md-2">
         <p><label for="range-opt" class="form-label">Optimistic</label>
-        <br><input type="range" class="form-range" id="range-opt" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider1" min="0" max="100" value="50" (mouseup)="playSound()"></p>
         <p><label for="range-fair" class="form-label">Fair</label>
-        <br><input type="range" class="form-range" id="range-fair" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider2" min="0" max="100" value="50" (mouseup)="playSound()"></p>
         <p><label for="range-giving" class="form-label">Giving</label>
-        <br><input type="range" class="form-range" id="range-giving" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider3" min="0" max="100" value="50" (mouseup)="playSound()"></p>
         <p><label for="range-energy" class="form-label">Energetic</label>
-        <br><input type="range" class="form-range" id="range-energy" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider4" min="0" max="100" value="50" (mouseup)="playSound()"></p>
         <p><label for="range-like" class="form-label">Likeable</label>
-        <br><input type="range" class="form-range" id="range-like" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider5" min="0" max="100" value="50" (mouseup)="playSound()"></p>
         <p><label for="range-cheer" class="form-label">Cheerful</label>
-        <br><input type="range" class="form-range" id="range-cheer" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider6" min="0" max="100" value="50" (mouseup)="playSound()"></p>
       </div>
 
       <div class="col-md-2">
         <p><label for="range-love" class="form-label">Easy to Love</label>
-        <br><input type="range" class="form-range" id="range-love" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider7" min="0" max="100" value="50" (mouseup)="playSound()"></p>
         <p><label for="range-flex" class="form-label">Flexible</label>
-        <br><input type="range" class="form-range" id="range-flex" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider8" min="0" max="100" value="50" (mouseup)="playSound()"></p>
         <p><label for="range-understand" class="form-label">Understanding</label>
-        <br><input type="range" class="form-range" id="range-understand" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider9" min="0" max="100" value="50" (mouseup)="playSound()"></p>
         <p><label for="range-express" class="form-label">Expressive</label>
-        <br><input type="range" class="form-range" id="range-express" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider10" min="0" max="100" value="50" (mouseup)="playSound()"></p>
         <p><label for="range-interest" class="form-label">Interesting</label>
-        <br><input type="range" class="form-range" id="range-interest" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider1" min="0" max="100" value="50" (mouseup)="playSound()"></p>
         <p><label for="range-passion" class="form-label">Passionate</label>
-        <br><input type="range" class="form-range" id="range-passion" (mouseup)="playSound()"></p>
+        <br><input type="range" class="form-range" id="slider12" min="0" max="100" value="50" (mouseup)="playSound()"></p>
       </div>
 
       <div class="col-md-2"></div>
@@ -63,7 +61,183 @@
       <div class="col-md-2"></div>
 
       <div class="col-md-2 align-self-end">
-        <button class="btn btn-action-primary py-2 px-4" (click)="playSound()">Submit</button>
+        <button class="btn btn-action-primary py-2 px-4" id="submitBtn" (click)="playSound()">Submit</button>
+      </div>
+    </div>
+  </div>-->
+
+<!-- Strengths Section with Toggle Slide Animation -->
+@if (goodmoods) {
+  <div class="goodmoods-container slide-down-animated">
+    <div class="row goodmoods">
+      <div class="col-md-2">
+        <p>
+          <label for="slider1" class="form-label">Optimistic</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider1"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider1']"
+            (input)="onSliderInput('slider1', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+        <p>
+          <label for="slider2" class="form-label">Fair</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider2"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider2']"
+            (input)="onSliderInput('slider2', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+        <p>
+          <label for="slider3" class="form-label">Giving</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider3"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider3']"
+            (input)="onSliderInput('slider3', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+        <p>
+          <label for="slider4" class="form-label">Energetic</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider4"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider4']"
+            (input)="onSliderInput('slider4', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+        <p>
+          <label for="slider5" class="form-label">Likeable</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider5"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider5']"
+            (input)="onSliderInput('slider5', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+        <p>
+          <label for="slider6" class="form-label">Cheerful</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider6"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider6']"
+            (input)="onSliderInput('slider6', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+      </div>
+
+      <div class="col-md-2">
+        <p>
+          <label for="slider7" class="form-label">Easy to Love</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider7"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider7']"
+            (input)="onSliderInput('slider7', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+        <p>
+          <label for="slider8" class="form-label">Flexible</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider8"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider8']"
+            (input)="onSliderInput('slider8', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+        <p>
+          <label for="slider9" class="form-label">Understanding</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider9"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider9']"
+            (input)="onSliderInput('slider9', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+        <p>
+          <label for="slider10" class="form-label">Expressive</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider10"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider10']"
+            (input)="onSliderInput('slider10', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+        <p>
+          <label for="slider11" class="form-label">Interesting</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider11"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider11']"
+            (input)="onSliderInput('slider11', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+        <p>
+          <label for="slider12" class="form-label">Passionate</label><br>
+          <input
+            type="range"
+            class="form-range"
+            id="slider12"
+            min="0"
+            max="100"
+            [value]="sliderValues()['slider12']"
+            (input)="onSliderInput('slider12', $event)"
+            (mouseup)="playSound()"
+          />
+        </p>
+      </div>
+
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+      <div class="col-md-2"></div>
+
+      <div class="col-md-2 align-self-end">
+        <button class="btn btn-action-primary py-2 px-4" id="submitBtn" (click)="onSubmit()">Submit</button>
       </div>
     </div>
   </div>
