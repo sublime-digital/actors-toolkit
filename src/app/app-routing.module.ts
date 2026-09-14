@@ -10,7 +10,7 @@ import { AccountComponent } from './account/account.component';
 
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'moodrecord', pathMatch: 'full' },
+  { path: '', redirectTo: 'traits', pathMatch: 'full' },
   { path: 'new-movies', component: NewMoviesComponent },
   { path: 'moodrecord', component: MoodRecordComponent },
   { path: 'traits', component: TraitsComponent },

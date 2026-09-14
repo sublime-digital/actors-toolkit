@@ -1,37 +1,25 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-
-import { MoodRecordComponent } from './mood-record/mood-record.component';
-import { TraitsComponent } from './traits/traits.component';
-import { AffirmationsComponent } from './affirmations/affirmations.component';
-import { HttpClientModule } from '@angular/common/http';
-import { NewMoviesComponent } from './new-movies/new-movies.component';
-import { VocalTrainingComponent } from './vocal-training/vocal-training.component';
-import { GigsComponent } from './gigs/gigs.component';
-import { AuthModalComponent } from './auth-modal/auth-modal.component';
-import { AccountComponent } from './account/account.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [
-
-    VocalTrainingComponent,
-       GigsComponent,
-       AccountComponent
-  ],
   imports: [
-    AuthModalComponent,
-    TraitsComponent,
-    MoodRecordComponent,
-    AffirmationsComponent,
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    NewMoviesComponent,
-  ],
-  providers: []
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatDialogModule,
+    MatIconModule,
+    MatButtonModule
+  ]
 })
-
-export class AppModule { }
+export class GigsModule { }

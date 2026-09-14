@@ -1,0 +1,157 @@
+/* ---------------------------------------------------
+   1. Main Layout & Side Padding
+--------------------------------------------------- */
+.gigs-page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2.5rem 3rem;
+  box-sizing: border-box;
+}
+
+/* ---------------------------------------------------
+   2. Header Contrast
+--------------------------------------------------- */
+.header-section {
+  margin-bottom: 2rem;
+}
+
+.header-section h1 {
+  color: #ffffff;
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.02em;
+}
+
+.header-section .subtitle {
+  color: #e2e8f0;
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* ---------------------------------------------------
+   3. Custom Form Fields (White Cards)
+--------------------------------------------------- */
+.toolbar-section {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  align-items: center;
+}
+
+.city-select-field {
+  flex: 1;
+  max-width: 320px;
+}
+
+.search-input-field {
+  flex: 2;
+}
+
+/* Field Container Fixes */
+::ng-deep .custom-card-field.mat-mdc-form-field {
+  background-color: #ffffff !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+::ng-deep .custom-card-field .mat-mdc-text-field-wrapper {
+  background-color: #ffffff !important;
+  padding: 0.25rem 1rem 0 1rem !important; /* Removed bottom padding */
+}
+
+/* Hide default bottom subscript wrapper (error/hint spacing) */
+::ng-deep .custom-card-field.mat-mdc-form-field .mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+  height: 0 !important;
+}
+
+/* Hide default underline indicator */
+::ng-deep .custom-card-field .mdc-line-ripple {
+  display: none !important;
+}
+
+/* Label Positioning Inside Box */
+::ng-deep .custom-card-field .mat-mdc-form-field-label-wrapper {
+  top: 0 !important;
+  padding-top: 8px !important;
+}
+
+::ng-deep .custom-card-field .mat-mdc-form-field-label {
+  color: #64748b !important;
+}
+
+/* Input / Select Text Formatting */
+::ng-deep .custom-card-field input.mat-mdc-input-element,
+::ng-deep .custom-card-field .mat-mdc-select-value-text,
+::ng-deep .custom-card-field .mat-mdc-select-arrow {
+  color: #0f172a !important;
+  font-weight: 500;
+}
+
+/* Suffix & Search Button Styling with Right Padding */
+::ng-deep .search-input-field .mat-mdc-form-field-icon-suffix {
+  padding-right: 1rem !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+::ng-deep .search-input-field button[matSuffix] {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: #475569 !important;
+  font-weight: 500 !important;
+  margin-right: 0 !important;
+}
+
+::ng-deep .search-input-field button[matSuffix]:hover {
+  color: #0f172a !important;
+}
+
+/* ---------------------------------------------------
+   4. Table Card Styling
+--------------------------------------------------- */
+.table-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.25);
+}
+
+.custom-gigs-table {
+  width: 100%;
+  background: transparent;
+}
+
+.custom-gigs-table th.mat-mdc-header-cell {
+  background-color: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 1.25rem;
+}
+
+.custom-gigs-table td.mat-mdc-cell {
+  color: #1e293b;
+  font-size: 0.925rem;
+  border-bottom: 1px solid #f1f5f9;
+  padding: 1rem 1.25rem;
+}
+
+.custom-gigs-table .font-medium {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.custom-gigs-table tr.mat-mdc-row:hover {
+  background-color: #f8fafc;
+}
+
+::ng-deep .table-card .mat-mdc-paginator {
+  background-color: #ffffff;
+  border-top: 1px solid #e2e8f0;
+  color: #475569;
+}

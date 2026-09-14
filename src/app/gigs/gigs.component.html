@@ -1,11 +1,73 @@
-<div class="header-container">
-<h1>Acting Gigs</h1>
-</div>
+<div class="gigs-page-container">
+  <!-- Header Section -->
+  <header class="header-section">
+    <h1>Acting Gigs</h1>
+    <p class="subtitle">Discover open casting calls in top entertainment markets</p>
+  </header>
 
-<div class="header-container">
-<p>Here you'll find the latest acting gigs available in your region</p>
-</div>
+  <!-- Control Toolbar -->
+  <div class="toolbar-section">
+    <!-- City Select -->
+    <mat-form-field appearance="fill" class="custom-card-field city-select-field">
+      <mat-label>City / Market</mat-label>
+      <mat-select [value]="selectedCity()" (selectionChange)="onCityChange($event.value)">
+        <mat-option value="ALL">All Cities</mat-option>
+        <mat-option value="Los Angeles, CA">Los Angeles, CA</mat-option>
+        <mat-option value="NYC, NY">New York, NY</mat-option>
+        <mat-option value="Atlanta, GA">Atlanta, GA</mat-option>
+        <mat-option value="Philadelphia, PA">Philadelphia, PA</mat-option>
+        <mat-option value="Las Vegas, NV">Las Vegas, NV</mat-option>
+        <mat-option value="Houston, TX">Houston, TX</mat-option>
+      </mat-select>
+    </mat-form-field>
 
-<div class="coming-soon-image-wrapper">
-  <img src="../../assets/coming-soon.jpg" alt="Coming Soon" class="coming-soon-img">
+    <!-- Search Input -->
+    <mat-form-field appearance="fill" class="custom-card-field search-input-field">
+      <mat-label>Search Title / Role</mat-label>
+      <input matInput (keyup)="applySearch($event)" placeholder="e.g. Lead, Feature, Voiceover" />
+      <button mat-flat-button matSuffix type="button" class="search-text-btn">
+        Search
+      </button>
+    </mat-form-field>
+  </div>
+
+  <!-- Table Card -->
+  <div class="table-card">
+    <table mat-table [dataSource]="dataSource" matSort class="custom-gigs-table">
+      <!-- Production Title -->
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Production Title</th>
+        <td mat-cell *matCellDef="let row" class="font-medium">{{ row.title }}</td>
+      </ng-container>
+
+      <!-- Role Type -->
+      <ng-container matColumnDef="role_type">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Role Type</th>
+        <td mat-cell *matCellDef="let row">{{ row.role_type }}</td>
+      </ng-container>
+
+      <!-- Location -->
+      <ng-container matColumnDef="location">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Location</th>
+        <td mat-cell *matCellDef="let row">{{ row.location }}</td>
+      </ng-container>
+
+      <!-- Pay Rate -->
+      <ng-container matColumnDef="pay_rate">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Pay Rate</th>
+        <td mat-cell *matCellDef="let row">{{ row.pay_rate }}</td>
+      </ng-container>
+
+      <!-- Deadline -->
+      <ng-container matColumnDef="submission_deadline">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Deadline</th>
+        <td mat-cell *matCellDef="let row">{{ row.submission_deadline }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+  </div>
 </div>

@@ -1,6 +1,6 @@
 import { Component, computed, signal, OnInit, OnDestroy, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthModalService } from '../auth-modal/auth-modal.service.';
+import { AuthModalService } from '../auth-modal/auth-modal.service';
 
 @Component({
   selector: 'app-mood-record',

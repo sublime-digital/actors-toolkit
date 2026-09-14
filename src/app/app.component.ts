@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthModalComponent } from '../app/auth-modal/auth-modal.component';
-import { AuthModalService } from './auth-modal/auth-modal.service.';
+import { AuthModalService } from './auth-modal/auth-modal.service';
 
 @Component({
   selector: 'app-root',

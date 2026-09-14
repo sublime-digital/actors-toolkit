@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AuthModalService } from './auth-modal.service.';
+import { Router } from '@angular/router';
+import { AuthModalService } from './auth-modal.service';
 
 @Component({
   selector: 'app-auth-modal',
@@ -124,9 +125,11 @@ import { AuthModalService } from './auth-modal.service.';
 })
 export class AuthModalComponent {
   authModalService = inject(AuthModalService);
+  private router = inject(Router);
 
   close(): void {
     this.authModalService.close();
+    this.router.navigate(['/']);
   }
 
   login(): void {
